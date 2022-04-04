@@ -1,14 +1,21 @@
 import React from "react";
-import etz_logo from "../assets/images/Etranzact_Logo.png";
+import etz_logo from "../../assets/images/Etranzact_Logo.png";
+import {Link} from "react-router-dom";
+import LoginModal from "./LoginModal"
+import RegisterModal from "./RegisterModal"
+import useModal from "../../hooks/useModal"
+
 
 const NavBar = () => {
-  return (
+const {showLogin, showRegister, handleLoginOpen, handleLoginClose, handleRegisterOpen, handleRegisterClose} = useModal()
+ 
+ return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="./index.html">
+          <Link className="navbar-brand" to="/">
             <img src={etz_logo} alt="etz-logo" width={200} height={24} />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -24,25 +31,22 @@ const NavBar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" />
             <button
               className="btn btn-primary ms-5"
-              data-bs-toggle="modal"
-              data-bs-target="#login-modal"
-              type="submit"
+              onClick={handleLoginOpen}
             >
               LOGIN
             </button>
             <button
               className="btn btn-primary ms-5"
-              data-bs-toggle="modal"
-              data-bs-target="#registration-modal"
-              type="submit"
+              onClick={handleRegisterOpen}
             >
               REGISTER
             </button>
           </div>
         </div>
       </nav>
-
       <hr />
+     {showLogin &&  <LoginModal {...{showLogin, handleLoginClose}}/>}
+     {showRegister &&  <RegisterModal {...{showRegister, handleRegisterClose}}/>}
     </>
   );
 };

@@ -12,11 +12,11 @@ const Footer = ({ postsPerPage, totalPosts, paginate }) => {
         <ul className="pagination">
           <li className="page-item px-2">
             <a className="page-link" href="#0" aria-label="Previous">
-              <i className="fa fa-step-backward" aria-hidden="true" />
+              <i className="fa fa-step-backward" aria-hidden="true" onClick={() => paginate(pageNumbers[0])}/>
             </a>
           </li>
           <li className="page-item px-2">
-            <a className="page-link" href="#0" aria-label="Previous">
+            <a className="page-link" href="#0" aria-label="Previous"  onClick={() => paginate(pageNumbers[0])}>
               <i className="fa fa-step-backward" aria-hidden="true" />
             </a>
           </li>
@@ -35,12 +35,12 @@ const Footer = ({ postsPerPage, totalPosts, paginate }) => {
           </li>
           <li className="page-item px-2">
             <a className="page-link" href="#0" aria-label="Next">
-              <i className="fa fa-step-forward" aria-hidden="true" />
+              <i className="fa fa-step-forward" aria-hidden="true" onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}/>
             </a>
           </li>
           <li className="page-item px-2">
             <a className="page-link" href="#0" aria-label="Next">
-              <i className="fa fa-step-forward" aria-hidden="true" />
+              <i className="fa fa-step-forward" aria-hidden="true" onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}/>
             </a>
           </li>
         </ul>

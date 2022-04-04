@@ -3,12 +3,15 @@ import Home from "./pages/Home";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import ReduxToastr from "react-redux-toastr";
+import { BrowserRouter} from "react-router-dom";
+import DisplayContent from "./pages/DisplayContent"
 import "./assets/scss/main.scss";
 import "./App.scss";
 
 function App() {
   return (
-    <Provider store={store}>
+   <BrowserRouter>
+      <Provider store={store}>
       <React.Fragment>
         <ReduxToastr
           position="top center"
@@ -17,9 +20,10 @@ function App() {
           progressBar
           preventDuplicates={false}
         />
-        <Home />
+        <DisplayContent/>
       </React.Fragment>
     </Provider>
+   </BrowserRouter>
   );
 }
 
