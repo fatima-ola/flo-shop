@@ -48,7 +48,7 @@ const RegisterModal = ({showRegister, handleRegisterClose}) => {
                         <Col md={12}>
                             <FormField.BTextField
                                 controlId={"fullName"}
-                                name="fulName"
+                                name="fullName"
                                 type={"text"}
                                 label={"Full Name"} 
                             />
@@ -144,23 +144,12 @@ const RegisterModal = ({showRegister, handleRegisterClose}) => {
                     </p>
                 </div>
             </div>
-                       
-                    </Row>
-                    {/* <pre>{JSON.stringify(values,null,2)}</pre> */}
-                    </Form>       
+                
+                </Row>
+                {/* <pre>{JSON.stringify(values,null,2)}</pre> */}
+                </Form>       
                 )}
             </Formik>
-            {/* <form>
-           
-            <div className="mb-3 d-grid">
-                <button type="button" className="btn btn-primary">Create Account</button>
-            </div>
-            <div className="modal-footer bolder justify-content-center">
-                <p>
-                Already have an account?<span><a href="./user.html">Login</a></span>
-                </p>
-            </div>
-            </form> */}
             </BModal>
         </React.Fragment>
       )
